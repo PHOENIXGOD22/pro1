@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>django phone</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'sty.css' %}">
+</head>
+<body>
+    <h1 class="one">PHONEBOOK</h1>
+    <div class="ins">
+        <form action="phonebook" method="POST">
+            {% csrf_token %}
+            <label for="">NAME</label>
+            <input type="text" name="name"><br>
+            <label for="">PHONE</label>
+            <input type="number" name="phone">
+            <input type="submit" name="btn" value="insert">
+            {{key}}
+        </form>
+    </div>
+    <!-- <div>
+        <form action="update" method="POST">
+        {% csrf_token %}
+        <b>Enter the old name</b>
+        <input type="text" name="oldname"><br>
+        <b>Enter the new name</b>
+        <input type="text" name="newname">
+        <input type="submit" value="UPDATE">
+        {{key1}}
+        </form>
+    </div>
+    <div>
+        <form action="delete" method="POST">
+        {% csrf_token %}
+        <b>Eneter the name to delete</b>
+        <input type="text" name="dlt">
+        <input type="submit" value="DELETE">
+        {{del}}
+        </form>
+    </div>
+    <div class="dis">
+
+        <form action="two">
+            <table border="1">
+                <input type="submit" value="Display" class="btn2" style="width: 400px;">
+                <tr>
+                    <td>Name</td>
+                    <td>phone</td>
+                </tr>
+                {% for i in phn %}
+                <tr>
+                    <td>{{i.Name}}</td>
+                    <td>{{i.Phone}}</td>
+                </tr>
+                {% endfor %}
+            </table>
+            <br>
+    
+        </form> -->
+
+    <button><a href="{% url 'disp' %}"> To  Display</button></a><ul></ul>
+    <button><a href="{% url 'upd' %}">update and delete</a></button>
+    
+    <!-- </div> -->
+
+
+</body>
+</html>

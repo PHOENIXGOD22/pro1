@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="dis">
+
+        <form action="two">
+            <table border="1">
+                <input type="submit" value="Display" class="btn2" style="width: 400px;">
+                <tr>
+                    <td>Name</td>
+                    <td>phone</td>
+                </tr>
+                {% for i in phn %}
+                <tr>
+                    <td>{{i.Name}}</td>.
+                    <td>{{i.Phone}}</td>
+                </tr>
+                {% endfor %}
+            </table>
+            <br>
+
+            <button><a href="{% url 'back' %}"> HOME </button></a>
+    
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div> 
+        <form action="update" method="POST">
+        {% csrf_token %}
+        <b>Enter the old name</b>
+        <input type="text" name="oldname"><br>
+        <b>Enter the new name</b>
+        <input type="text" name="newname">
+        <input type="submit" value="UPDATE">
+        {{key1}}
+        </form>
+    </div>
+    <div>
+        <form action="delete" method="POST">
+        {% csrf_token %}
+        <b>Eneter the name to delete</b>
+        <input type="text" name="dlt">
+        <input type="submit" value="DELETE">
+        {{del}}
+        </form>
+    </div> 
+    <button><a href="{% url 'back' %}"> HOME </button></a>
+</body>
+</html>
